@@ -75,7 +75,7 @@ export default {
 
             <div class="w-full bg-secondary rounded-xl text-white">
                 <section
-                    class="w-full cuts-corcle-container flex gap-6 mb-10 border-b border-gray-800 p-5 overflow-hidden">
+                    class="w-full cuts-corcle-container flex gap-6 md:mb-10 mb-6 border-b border-gray-800 p-5 overflow-hidden">
                     <div class="w-full flex"
                         v-for="cut in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
                         <div class="w-5 h-5 bg-white rounded-full flex justify-center items-center" />
@@ -83,7 +83,7 @@ export default {
                 </section>
 
 
-                <section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 pt-0">
+                <section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:p-5 p-3 pt-0">
                     <div class="w-full h-full" v-for="feature in Features">
                         <div
                             class="w-full h-full shadow-sm p-4 rounded-xl bg-purple border-b-4 border-r-2 hover:translate-y-[4px] hover:border-b flex flex-col gap-2 transition-all duration-300">

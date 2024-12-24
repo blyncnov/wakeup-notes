@@ -1,7 +1,7 @@
 <template>
-    <div className="relative w-full">
+    <div className="relative w-full pb-12 pt-4">
         <Container>
-            <div className="relative flex flex-wrap items-center justify-between gap-1 py-8">
+            <div className="relative flex md:flex-row flex-col items-center justify-between gap-3 ">
                 <div>
                     <NuxtLink to="/" class="w-auto text-gray-800 text-lg flex items-center gap-x-1.5 font-medium">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"

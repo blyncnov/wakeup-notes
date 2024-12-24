@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-full py-12 bg-purple">
+    <div class="w-full md:py-12 py-8 bg-purple">
         <Container>
             <div class="w-full min-h-[250px] relative text-secondary grid grid-cols-1 md:grid-cols-2 gap-5">
                 <section class="w-full h-full bg-white rounded-xl p-6">

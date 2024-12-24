@@ -1,7 +1,7 @@
 <template>
-    <div className="relative w-full pb-12 pt-4">
+    <div class="relative w-full pb-12 pt-4">
         <Container>
-            <div className="relative flex md:flex-row flex-col items-center justify-between gap-3 ">
+            <div class="relative flex lg:flex-row flex-col items-center justify-center md:justify-between gap-3">
                 <div>
                     <NuxtLink to="/" class="w-auto text-gray-800 text-lg flex items-center gap-x-1.5 font-medium">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
@@ -17,8 +17,8 @@
                     </NuxtLink>
                 </div>
 
-                <div className="flex flex-col items-center justify-center">
-                    <div className="text-sm text-secondary">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="text-sm text-secondary">
                         Made with ❤️ By <a class="underline" href="https://jeremytechie.com">Jeremytechie</a>
                     </div>
                 </div>

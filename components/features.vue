@@ -75,7 +75,7 @@ export default {
 
             <div class="w-full bg-secondary rounded-xl text-white">
                 <section
-                    class="w-full cuts-corcle-container flex gap-6 md:mb-10 mb-6 border-b border-gray-800 p-5 overflow-hidden">
+                    class="w-full cuts-corcle-container flex gap-6 mb-6 border-b border-gray-800 p-5 overflow-hidden">
                     <div class="w-full flex"
                         v-for="cut in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
                         <div class="w-5 h-5 bg-white rounded-full flex justify-center items-center" />

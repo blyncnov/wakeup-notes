@@ -40,7 +40,7 @@ export default {
 <template>
     <div class="w-full">
         <Container>
-            <div class="w-full grid grid-cols-1 md:grid-cols-2 rounded-xl text-secondary gap-2 md:gap-6 mb-6 md:mb-16">
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 rounded-xl text-secondary gap-2 md:gap-6 mb-12 md:mb-16">
                 <div class="w-full">
                     <h3 class="text-2xl md:text-3xl !leading-[1.2] font-medium">
                         Discover and Secure Your World of Notes. Connect Memories to Places.

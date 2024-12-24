@@ -49,7 +49,7 @@ export default {
 
 
                 <div class="w-full">
-                    <p class="text-base opacity-70 font-normal mb-3">
+                    <p class="text-[18px] opacity-70 font-normal mb-3">
                         With seamless geolocation integration, this app allows you to leave notes that are tied to
                         specific locations.
                     </p>
@@ -88,7 +88,7 @@ export default {
                         <div
                             class="w-full h-full shadow-sm p-4 rounded-xl bg-purple border-b-4 border-r-2 hover:translate-y-[4px] hover:border-b flex flex-col gap-2 transition-all duration-300">
                             <h2 class="text-xl !leading-[1.3]">{{ feature.title }}</h2>
-                            <p class="text-sm text-gray-200">
+                            <p class="text-[15px] text-gray-200">
                                 {{ feature.description }}
                             </p>
                         </div>

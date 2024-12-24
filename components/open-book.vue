@@ -46,13 +46,13 @@ export default {
                     <div class="w-full flex flex-col space-y-6">
                         <h2 class="text-lg opacity-80 font-normal">
                             Leave a note at your favorite spot, and it will be waiting for you when you return!
-                            It allows you to create passkey-protected
+                            allows you to create passkey-protected
                             private notes for secure access.
                         </h2>
 
                         <div class="flex gap-4 flex-col justify-between h-full overflow-hidden">
                             <ul class="w-full" v-for="feature in Features">
-                                <li class="flex gap-2 items-center">
+                                <li class="grid grid-cols-[auto_1fr] gap-2 items-start">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="green" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" class="lucide lucide-check-check">

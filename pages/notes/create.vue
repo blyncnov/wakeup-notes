@@ -3,10 +3,10 @@
         <Container>
             <div class="w-full flex flex-col gap-4">
                 <div class="flex flex-col gap-2 mb-6">
-                    <h1 class="text-3xl font-bold text-gray-200">
+                    <h1 class="text-3xl font-bold secondary">
                         Spartial Notes — Location-Based Note-Taking Application
                     </h1>
-                    <p class=" text-gray-300">
+                    <p class=" text-secondary">
                         Leave a note at your favorite location and it will be waiting for you the next time you visit!
                     </p>
                 </div>
@@ -14,48 +14,48 @@
                 <form @submit="" class="space-y-6">
                     <div class="grid gap-4 md:grid-cols-2">
                         <div>
-                            <label htmlFor="note_title" class="mb-1 block text-sm font-medium text-white">
+                            <label htmlFor="note_title" class="mb-1 block text-sm font-medium">
                                 Note Title
                             </label>
                             <input type="text" id="note_title" name="note_title" placeholder="Your note title"
-                                class="w-full bg-primary/5 border-primary rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
+                                class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
                         </div>
 
                         <div>
-                            <label htmlFor="note_description" class="mb-1 block text-sm font-medium text-white">
+                            <label htmlFor="note_description" class="mb-1 block text-sm font-medium">
                                 Note Description
                             </label>
                             <input type="text" id="note_description" name="note_description"
                                 placeholder="Your full note description"
-                                class="w-full bg-primary/5 border-primary rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
+                                class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
                         </div>
                     </div>
 
                     <div>
-                        <label htmlFor="note_content" class="mb-1 block text-sm font-medium text-white">
+                        <label htmlFor="note_content" class="mb-1 block text-sm font-medium">
                             Note Content
                         </label>
                         <textarea id="note_content" name="note_content"
                             placeholder="A marketplace app connecting local farmers with restaurants"
-                            class="w-full min-h-[120px] bg-primary/5 border-primary rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none"
+                            class="w-full min-h-[120px] bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none"
                             rows={4} required />
                     </div>
 
                     <div class="grid gap-4 md:grid-cols-2">
                         <div>
-                            <label htmlFor="note_label" class="mb-1 block text-sm font-medium text-white">
+                            <label htmlFor="note_label" class="mb-1 block text-sm font-medium">
                                 Note Label
                             </label>
                             <input type="text" id="note_label" name="note_label" placeholder="Your note label"
-                                class="w-full bg-primary/5 border-primary rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
+                                class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
                         </div>
 
                         <div>
-                            <label htmlFor="note_visibility" class="mb-1 block text-sm font-medium text-white">
+                            <label htmlFor="note_visibility" class="mb-1 block text-sm font-medium">
                                 Note Visibility
                             </label>
                             <select name="note_visibility" id="note_visibility"
-                                class="w-full bg-primary/5 border-primary rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none">
+                                class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none">
                                 <option value="public" selected>Public</option>
                                 <option value="private">Private</option>
                             </select>
@@ -63,29 +63,29 @@
                     </div>
 
                     <div>
-                        <label htmlFor="note_location" class="mb-1 block text-sm font-medium text-white">
+                        <label htmlFor="note_location" class="mb-1 block text-sm font-medium">
                             Choose a Location
                         </label>
                         <input type="text" id="note_location" name="note_location"
                             placeholder="FUNAAB, Alabata Road, Abeokuta, Ogun State, Nigeria"
-                            class="w-full bg-primary/5 border-primary rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
+                            class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
                     </div>
 
                     <div class="grid gap-4 md:grid-cols-2">
                         <div>
-                            <label htmlFor="note_latitude" class="mb-1 block text-sm font-medium text-white">
+                            <label htmlFor="note_latitude" class="mb-1 block text-sm font-medium">
                                 Latitude
                             </label>
                             <input type="text" id="note_latitude" name="note_latitude" placeholder="33.6"
-                                class="w-full bg-primary/5 border-primary rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
+                                class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
                         </div>
 
                         <div>
-                            <label htmlFor="note_longitude" class="mb-1 block text-sm font-medium text-white">
+                            <label htmlFor="note_longitude" class="mb-1 block text-sm font-medium">
                                 Longitude
                             </label>
                             <input type="text" id="note_longitude" name="note_longitude" placeholder="89.1"
-                                class="w-full bg-primary/5 border-primary rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
+                                class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 text-gray-100 focus:border-blue-500 focus:outline-none" />
                         </div>
                     </div>
 

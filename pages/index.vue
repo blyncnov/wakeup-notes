@@ -1,5 +1,7 @@
 <template>
-    <OpenBook />
-    <Features />
-    <Footer />
+    <div class="w-full">
+        <OpenBook />
+        <Features />
+        <Footer />
+    </div>
 </template>

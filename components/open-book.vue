@@ -51,7 +51,7 @@ export default {
                         </h2>
 
                         <div class="flex gap-4 flex-col justify-between h-full overflow-hidden">
-                            <ul class="w-full" v-for="feature in Features">
+                            <ul class="w-full" v-for="feature in Features" :key="feature.id">
                                 <li class="grid grid-cols-[auto_1fr] gap-2 items-start">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="green" stroke-width="2" stroke-linecap="round"
@@ -81,7 +81,7 @@ export default {
                         class="w-full md:w-[50px] h-[50px] md:h-full bg-purple/5 absolute md:-left-[calc(10px+25px)] left-0 -top-[calc(10px+25px)] md:top-0">
                         <div
                             class="flex gap-6 flex-row md:flex-col justify-between h-full overflow-hidden md:py-4 px-4 md:px-0">
-                            <div class="w-full" v-for="cut in [1, 2, 3, 4, 5, 6, 7]">
+                            <div class="w-full" v-for="cut in [1, 2, 3, 4, 5, 6, 7]" :key="cut">
                                 <div
                                     class="md:w-[50px] min-w-[10px] h-[50px] md:h-5 bg-purple rounded-full flex justify-center items-center">
                                 </div>

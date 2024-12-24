@@ -5,26 +5,53 @@ const route = useRoute();
 <template>
     <div class="w-ful py-12">
         <Container>
-            <div class="w-full rounded-xl text-white bg-black/5 p-4 border border-secondary shadow-sm shadow-gray-500">
-                <div>
-                    <h2 class="text-2xl">A Particular Single Note With ID - {{ route.params.id }}</h2>
-                    <p class="text-base text-gray-300/70 mt-4">
-                        The app supports privacy with passkey-protected private notes, ensuring that sensitive
-                        content
-                        remains secure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis
-                        aspernatur facere culpa eum at voluptatum quidem, sit alias excepturi dolorem dicta! Neque saepe
-                        sapiente, nihil laboriosam ut aliquam, rerum distinctio, quod cumque reprehenderit suscipit ex
-                        et esse expedita necessitatibus?
 
-                        <br>
-                        <br>
 
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis
-                        aspernatur facere culpa eum at voluptatum quidem, sit alias excepturi dolorem dicta! Neque saepe
-                        sapiente, nihil laboriosam ut aliquam, rerum distinctio, quod cumque reprehenderit suscipit ex
-                        et esse expedita necessitatibus?
-                    </p>
+            <div class="w-full bg-secondary rounded-xl text-white">
+                <section
+                    class="w-full cuts-corcle-container flex gap-6 mb-6 border-b border-gray-800 p-5 overflow-hidden">
+                    <div class="w-full flex"
+                        v-for="cut in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]"
+                        :key="cut">
+                        <div class="w-5 h-5 bg-white rounded-full flex justify-center items-center" />
+                    </div>
+                </section>
+
+                <div class="w-full p-5">
+                    <div>
+                        <h2 class="text-2xl">A Particular Single Note With ID - {{ route.params.id }}</h2>
+                        <p class="text-base text-white mt-4">
+                            The app supports privacy with passkey-protected private notes, ensuring that sensitive
+                            content
+                            remains secure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis
+                            aspernatur facere culpa eum at voluptatum quidem, sit alias excepturi dolorem dicta! Neque
+                            saepe
+                            sapiente, nihil laboriosam ut aliquam, rerum distinctio, quod cumque reprehenderit suscipit
+                            ex
+                            et esse expedita necessitatibus?
+
+                            <br>
+                            <br>
+
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis
+                            aspernatur facere culpa eum at voluptatum quidem, sit alias excepturi dolorem dicta! Neque
+                            saepe
+                            sapiente, nihil laboriosam ut aliquam, rerum distinctio, quod cumque reprehenderit suscipit
+                            ex
+                            et esse expedita necessitatibus?
+
+                            The app supports privacy with passkey-protected private notes, ensuring that sensitive
+                            content
+                            remains secure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis
+                            aspernatur facere culpa eum at voluptatum quidem, sit alias excepturi dolorem dicta! Neque
+                            saepe
+                            sapiente, nihil laboriosam ut aliquam, rerum distinctio, quod cumque reprehenderit suscipit
+                            ex
+                            et esse expedita necessitatibus?
+                        </p>
+                    </div>
                 </div>
+
             </div>
 
             <div class="w-auto mt-6 flex items-center justify-end gap-x-3">

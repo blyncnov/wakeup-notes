@@ -56,7 +56,7 @@ export default {
 
                     <div class="w-full flex">
                         <NuxtLink to="notes/create"
-                            class="w-auto group text-sms bg-secondary flex items-center gap-2 text-white rounded-xl px-4 py-2 border border-secondary">
+                            class="w-full md:w-auto justify-center group text-sms bg-secondary flex items-center gap-2 text-white rounded-xl px-4 py-2 border border-secondary">
                             <span>Get Started</span>
                             <span>
                                 <svg xmlns=" http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"

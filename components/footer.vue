@@ -18,8 +18,8 @@
                 </div>
 
                 <div className="flex flex-col items-center justify-center">
-                    <div className="text-sm text-gray-200">
-                        Developed By <a href="https://jeremytechie.com">Jeremytechie</a>
+                    <div className="text-sm text-secondary">
+                        Made with ❤️ By <a class="underline" href="https://jeremytechie.com">Jeremytechie</a>
                     </div>
                 </div>
             </div>

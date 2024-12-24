@@ -43,11 +43,11 @@ export default {
                         </NuxtLink>
                     </div>
 
-                    <div class="w-full flex flex-col space-y-4">
-                        <h2 class="text-base opacity-80 font-normal">
-                            Leave a note at your favorite spot, and it will be there when you return!
-                            The app offers privacy with passkey-protected private notes, ensuring your sensitive content
-                            stays secure.
+                    <div class="w-full flex flex-col space-y-6">
+                        <h2 class="text-lg opacity-80 font-normal">
+                            Leave a note at your favorite spot, and it will be waiting for you when you return!
+                            It allows you to create passkey-protected
+                            private notes for secure access.
                         </h2>
 
                         <div class="flex gap-4 flex-col justify-between h-full overflow-hidden">

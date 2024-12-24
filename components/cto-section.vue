@@ -2,11 +2,10 @@
     <div class="w-full">
         <Container>
             <div class="w-full relative bg-primary text-white rounded-xl overflow-hidden">
-                <div class="w-full md:px-10 px-5 md:py-5 py-10">
+                <div class="w-full md:px-10 px-3 md:py-5 py-10">
                     <div class="w-full">
-                        <h3 class="text-3xl !leading-[1.4] font-medium">
-                            Connect Memories to Places.
-                            <br>
+                        <h3 class="text-3xl !leading-[1.3] font-medium">
+                            <span class="hidden md:block"> Connect Memories to Places.</span>
                             Discover and Secure Your World of Notes.
                         </h3>
 

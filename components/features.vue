@@ -38,7 +38,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-full py-12">
+    <div class="w-full">
         <Container>
             <div class="w-full grid grid-cols-1 md:grid-cols-2 rounded-xl text-secondary gap-2 md:gap-6 mb-6 md:mb-16">
                 <div class="w-full">
@@ -55,9 +55,9 @@ export default {
                     </p>
 
                     <div class="w-full flex">
-                        <NuxtLink to="notes/create"
+                        <NuxtLink to="/notes"
                             class="w-full md:w-auto justify-center group text-sms bg-secondary flex items-center gap-2 text-white rounded-xl px-4 py-2 border border-secondary">
-                            <span>Get Started</span>
+                            <span>Discover Notes</span>
                             <span>
                                 <svg xmlns=" http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -74,27 +74,31 @@ export default {
 
 
             <div class="w-full bg-secondary rounded-xl text-white">
-                <section
-                    class="w-full cuts-corcle-container flex gap-6 mb-6 border-b border-gray-800 p-5 overflow-hidden">
-                    <div class="w-full flex"
-                        v-for="_cut in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
-                        <div class="w-5 h-5 bg-white rounded-full flex justify-center items-center" />
-                    </div>
-                </section>
-
-
-                <section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:p-5 p-3 pt-0">
-                    <div class="w-full h-full" v-for="feature in Features" :key="feature.id">
-                        <div
-                            class="w-full h-full shadow-sm p-4 rounded-xl bg-purple border-b-4 border-r-2 hover:translate-y-[4px] hover:border-b flex flex-col gap-2 transition-all duration-300">
-                            <h2 class="text-xl !leading-[1.3]">{{ feature.title }}</h2>
-                            <p class="text-[15px] text-gray-200">
-                                {{ feature.description }}
-                            </p>
+                <div class="w-full min-w-full max-w-full">
+                    <!-- Paper Cuts -->
+                    <section
+                        class="w-full cuts-corcle-container flex gap-6 mb-6 border-b border-gray-800 p-5 overflow-hidden">
+                        <div class="w-full flex"
+                            v-for="_cut in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                            <div
+                                class="w-5 h-5 bg-white hover:bg-red-500 rounded-full flex justify-center items-center transition-colors duration-300" />
                         </div>
-                    </div>
-                </section>
+                    </section>
 
+
+                    <section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:p-5 p-3 pt-0">
+                        <div class="w-full h-full" v-for="feature in Features" :key="feature.id">
+                            <div
+                                class="w-full h-full shadow-sm p-4 rounded-xl bg-primary border-b-4 border-r-2 hover:translate-y-[4px] hover:border-b flex flex-col gap-2 transition-all duration-300">
+                                <h2 class="text-xl !leading-[1.3]">{{ feature.title }}</h2>
+                                <p class="text-[15px] text-white/90">
+                                    {{ feature.description }}
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
             </div>
         </Container>
     </div>

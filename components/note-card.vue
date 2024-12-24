@@ -12,7 +12,7 @@ export default {
 <template>
     <div class="w-full shadow-sm p-4 rounded-xl border-[1.2px] border-primary bg-primary/5 flex flex-col gap-4">
         <h2 class="text-2xl !leading-[1.3]">Location-Based Note-Taking Application.</h2>
-        <p class="text-base text-gray-800">
+        <p class="text-base text-secondary">
             The app supports privacy with passkey-protected private notes, ensuring that sensitive
             content
             remains secure.

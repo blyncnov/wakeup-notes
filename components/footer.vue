@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-full pb-12 pt-4">
+    <div class="relative w-full pb-12">
         <Container>
             <div class="relative flex lg:flex-row flex-col items-center justify-center md:justify-between gap-3">
                 <div>

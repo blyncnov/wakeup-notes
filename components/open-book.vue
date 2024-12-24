@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-full md:py-12 py-8 bg-purple">
+    <div class="w-full md:py-12 py-8 bg-primary">
         <Container>
             <div class="w-full min-h-[250px] relative text-secondary grid grid-cols-1 md:grid-cols-2 gap-5">
                 <section class="w-full h-full bg-white rounded-xl p-6">
@@ -73,17 +73,18 @@ export default {
                         <h3 class="text-xl text-center">Discover and Leave Notes on the Map</h3>
 
                         <div class="w-full mt-2">
-                            <h3>dj</h3>
+
                         </div>
                     </div>
 
+                    <!-- Paper Middle Cuts -->
                     <div
-                        class="w-full md:w-[50px] h-[50px] md:h-full bg-purple/5 absolute md:-left-[calc(10px+25px)] left-0 -top-[calc(10px+25px)] md:top-0">
+                        class="w-full md:w-[50px] h-[50px] md:h-full bg-primary/5 absolute md:-left-[calc(10px+25px)] left-0 -top-[calc(10px+25px)] md:top-0">
                         <div
                             class="flex gap-6 flex-row md:flex-col justify-between h-full overflow-hidden md:py-4 px-4 md:px-0">
                             <div class="w-full" v-for="cut in [1, 2, 3, 4, 5, 6, 7]" :key="cut">
                                 <div
-                                    class="md:w-[50px] min-w-[10px] h-[50px] md:h-5 bg-purple rounded-full flex justify-center items-center">
+                                    class="md:w-[50px] min-w-[10px] h-[50px] md:h-5 bg-primary rounded-full flex justify-center items-center">
                                 </div>
                             </div>
                         </div>

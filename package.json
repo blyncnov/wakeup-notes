@@ -9,15 +9,23 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+},
   "dependencies": {
+    "@prisma/extension-accelerate": "^1.2.1",
+    "@prisma/extension-pulse": "^1.2.0",
+    "@prisma/nuxt": "^0.1.3",
     "globe.gl": "^2.34.5",
     "nuxt": "^3.14.1592",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@prisma/client": "^6.1.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
+    "prisma": "^6.1.0",
     "tailwindcss": "^3.4.17"
   }
 }

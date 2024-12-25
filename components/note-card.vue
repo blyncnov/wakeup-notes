@@ -1,8 +1,11 @@
 <script lang="ts">
+
+import type { NoteProps } from "~/types";
+
 export default {
     props: {
         note: {
-            type: Number,
+            type: Object as PropType<NoteProps>,
             required: true,
         },
     }
@@ -10,16 +13,21 @@ export default {
 </script>
 
 <template>
-    <div class="w-full shadow-sm p-4 rounded-xl border-[1.2px] border-primary bg-primary/5 flex flex-col gap-4">
-        <h2 class="text-2xl !leading-[1.3]">Location-Based Note-Taking Application.</h2>
-        <p class="text-base text-secondary">
-            The app supports privacy with passkey-protected private notes, ensuring that sensitive
-            content
-            remains secure.
-        </p>
+    <div
+        class="w-full h-full shadow-sm p-4 rounded-xl border-[1.2px] border-primary bg-primary/5 flex flex-col justify-between gap-4">
+        <div class="flex flex-col gap-1.5">
+            <h2 class="text-2xl !leading-[1.3]"> {{ note.note_title }}</h2>
+            <p class="text-base text-secondary">
+                {{ note.note_description }}
+            </p>
+
+            <div class="w-full capitalize">
+                Note Visibility: {{ note.note_visibility }}
+            </div>
+        </div>
 
         <div class="w-auto flex">
-            <NuxtLink to="/notes/10">
+            <NuxtLink :to="`/notes/${note.id}`">
                 <button
                     class="w-auto group bg-secondary border border-secondary flex !text-sm justify-center items-center gap-x-2 rounded-xl px-3 py-1.5 text-gray-100">
                     <span>Open Note</span>

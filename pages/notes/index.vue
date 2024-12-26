@@ -1,18 +1,19 @@
 <script setup lang="ts">
-const { data: notes, pending, error } = await useFetch('/api/notes', {
+const { data: notes, error } = await useFetch('/api/notes', {
     lazy: true,
+    cache: 'no-store',
 });
 
 </script>
 
 <template>
-    <div class="w-full py-12">
+    <div class="w-full py-10">
         <Container>
             <div class="w-full h-full bg-transparent rounded-xl text-secondary">
                 <h3 class="text-xl md:text-2xl font-normal opacity-85">Nearby Notes</h3>
 
                 <!-- Loading State -->
-                <div v-if="pending" class="mt-6">
+                <div v-if="!notes" class="mt-6">
                     <p>Loading...</p>
                 </div>
 

@@ -4,7 +4,7 @@ export interface NoteProps {
   note_description: string;
   note_content: string;
   note_label: string;
-  note_visibility: "public" | "protected";
+  note_visibility: string;
   note_location: string;
   note_latitude: number;
   note_longitude: number;

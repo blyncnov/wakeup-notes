@@ -11,17 +11,18 @@ datasource db {
 }
 
 enum NoteVisibility {
-    PUBLIC
-    PROTECTED
+    public
+    private
 }
 
 model Note {
-    id               Int    @id @default(autoincrement())
+    id               Int     @id @default(autoincrement())
     note_title       String
     note_description String
     note_content     String
     note_label       String
-    note_visibility  String @default("PUBLIC")
+    note_visibility  String  @default("public")
+    note_password    String?
     note_location    String
     note_latitude    Float
     note_longitude   Float

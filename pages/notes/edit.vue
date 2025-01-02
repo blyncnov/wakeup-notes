@@ -80,7 +80,7 @@ const handleSubmit = (event: Event) => {
             <div class="w-full flex flex-col gap-4">
                 <div class="flex flex-col gap-2 mb-6">
                     <h1 class="text-3xl font-bold secondary">
-                        Spartial Notes — Location-Based Note-Taking Application
+                        Spartial Notes — Location Based Note Taking Application
                     </h1>
                     <p class="text-secondary">
                         Leave a note at your favorite location and it will be waiting for you the next time you visit!

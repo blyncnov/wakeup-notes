@@ -11,6 +11,7 @@ const form = ref({
     note_content: "",
     note_label: "",
     note_visibility: "public",
+    note_password: "",
     note_location: "",
     note_latitude: null,
     note_longitude: null,
@@ -21,7 +22,7 @@ const handleSubmit = async (event: Event) => {
     event.preventDefault();
 
     // Desctructure form data
-    const { note_title, note_description, note_content, note_label, note_visibility, note_location, note_latitude, note_longitude } = form.value
+    const { note_title, note_description, note_content, note_label, note_visibility, note_location, note_latitude, note_longitude, note_password } = form.value
 
     fetch('/api/notes/create', {
         method: 'POST',
@@ -34,6 +35,7 @@ const handleSubmit = async (event: Event) => {
             note_content,
             note_label,
             note_visibility,
+            note_password,
             note_location,
             note_latitude,
             note_longitude,
@@ -53,7 +55,7 @@ const handleSubmit = async (event: Event) => {
             <div class="w-full flex flex-col gap-4">
                 <div class="flex flex-col gap-2 mb-6">
                     <h1 class="text-3xl font-bold secondary">
-                        Spartial Notes — Location-Based Note-Taking Application
+                        Spartial Notes — Location Based Note Taking Application
                     </h1>
                     <p class="text-secondary">
                         Leave a note at your favorite location and it will be waiting for you the next time you visit!
@@ -111,6 +113,15 @@ const handleSubmit = async (event: Event) => {
                                 <option value="private">Private</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div v-if="form.note_visibility === 'private'">
+                        <label for="note_password" class="mb-1 block text-sm font-medium">
+                            Note Password
+                        </label>
+                        <input v-model="form.note_password" type="text" id="note_password" name="note_password"
+                            placeholder="Your private note password"
+                            class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 focus:border-blue-500 focus:outline-none" />
                     </div>
 
                     <div>

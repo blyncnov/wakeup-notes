@@ -37,3 +37,4 @@ const { data: notes, error } = await useFetch('/api/notes', {
         </Container>
     </div>
 </template>
+s

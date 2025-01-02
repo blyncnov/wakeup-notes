@@ -4,6 +4,9 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
+// Add loading state for submission button
+const isLoading = ref(false);
+
 // Reactive state for form inputs
 const form = ref({
     note_title: "",
@@ -20,6 +23,9 @@ const form = ref({
 // Form submission handler
 const handleSubmit = async (event: Event) => {
     event.preventDefault();
+
+    // Set loading state to true
+    isLoading.value = true;
 
     // Desctructure form data
     const { note_title, note_description, note_content, note_label, note_visibility, note_location, note_latitude, note_longitude, note_password } = form.value
@@ -41,10 +47,16 @@ const handleSubmit = async (event: Event) => {
             note_longitude,
         }),
     })
-        .then((response) => response.json())
         .then(() => {
-            // Redirect to notes page
-            router.push('/notes')
+            // Make sure it redirect to /notes after note created successfully
+            router.push('/notes');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            // Set loading state to false
+            isLoading.value = false;
         });
 };
 </script>
@@ -154,10 +166,10 @@ const handleSubmit = async (event: Event) => {
                     </div>
 
                     <div class="w-full">
-                        <button type="submit"
+                        <button type="submit" :disabled="isLoading"
                             class="w-auto group bg-blue/5 border border-blue flex !text-sm justify-center items-center gap-x-1.5 rounded-xl px-4 py-2 text-blue">
-                            <span>Create note</span>
-                            <span>
+                            <span> {{ isLoading ? "Saving your note ..." : "Create your Note" }}</span>
+                            <span v-if="!isLoading">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="lucide lucide-file-pen-line">

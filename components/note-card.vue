@@ -17,7 +17,7 @@ export default {
 
 <template>
     <div
-        class="w-full relative h-full shadow-sm p-4 rounded-xl border-[1.2px] border-primary bg-primary/5 flex flex-col justify-between gap-4">
+        class="w-full relative h-full shadow-sm p-4 rounded-xl border-[2px] border-primary bg-primary/50 flex flex-col justify-between gap-4">
         <div class="flex flex-col gap-1.5">
             <h2 class="text-2xl !leading-[1.3]"> {{ note.note_title }}</h2>
             <p class="text-base text-secondary">

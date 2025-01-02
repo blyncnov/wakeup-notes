@@ -1,11 +1,20 @@
 <script setup lang="ts">
 const route = useRoute();
+
+const noteId = route.params.id as string;
+const { data: note, error } = await useFetch(`/api/notes/get-note`, {
+    params: { id: noteId },
+});
+
+if (error.value) {
+    console.error("Error fetching note:", error.value);
+}
+
 </script>
 
 <template>
     <div class="w-ful py-12">
         <Container>
-
 
             <div class="w-full bg-secondary rounded-xl text-white">
                 <section
@@ -17,44 +26,43 @@ const route = useRoute();
                     </div>
                 </section>
 
-                <div class="w-full p-5">
+                <!-- Loading State -->
+                <div v-if="!note" class="mt-6 p-5 text-lg">
+                    <p>Note does not exist!</p>
+                </div>
+
+                <!-- Error State -->
+                <div v-else-if="error" class="mt-6">
+                    <p>Error loading notes.</p>
+                </div>
+
+                <div v-else class="w-full p-5">
                     <div>
-                        <h2 class="text-2xl">A Particular Single Note With ID - {{ route.params.id }}</h2>
-                        <p class="text-base text-white mt-4">
-                            The app supports privacy with passkey-protected private notes, ensuring that sensitive
-                            content
-                            remains secure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis
-                            aspernatur facere culpa eum at voluptatum quidem, sit alias excepturi dolorem dicta! Neque
-                            saepe
-                            sapiente, nihil laboriosam ut aliquam, rerum distinctio, quod cumque reprehenderit suscipit
-                            ex
-                            et esse expedita necessitatibus?
+                        <div class="d">
+                            <div class="flex items-center gap-3">
+                                <h2 class="text-2xl">{{ note?.note_title }}</h2>
 
-                            <br>
-                            <br>
+                                <p class="text-base text-white">
+                                    <span class="bg-blue py-1 px-2 rounded-full"> {{ note?.note_label }}</span>
+                                </p>
+                            </div>
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis
-                            aspernatur facere culpa eum at voluptatum quidem, sit alias excepturi dolorem dicta! Neque
-                            saepe
-                            sapiente, nihil laboriosam ut aliquam, rerum distinctio, quod cumque reprehenderit suscipit
-                            ex
-                            et esse expedita necessitatibus?
+                            <h3 class="text-base text-white mt-2">
+                                {{ note?.note_description }}
+                            </h3>
 
-                            The app supports privacy with passkey-protected private notes, ensuring that sensitive
-                            content
-                            remains secure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis
-                            aspernatur facere culpa eum at voluptatum quidem, sit alias excepturi dolorem dicta! Neque
-                            saepe
-                            sapiente, nihil laboriosam ut aliquam, rerum distinctio, quod cumque reprehenderit suscipit
-                            ex
-                            et esse expedita necessitatibus?
-                        </p>
+                            <hr class="border border-gray-800 my-6" />
+
+                            <p class="text-base text-white mt-6 whitespace-pre-wrap">
+                                {{ note?.note_content }}
+                            </p>
+                        </div>
                     </div>
                 </div>
 
             </div>
 
-            <div class="w-auto mt-6 flex items-center justify-end gap-x-3">
+            <!-- <div class="w-auto mt-6 flex items-center justify-end gap-x-3">
                 <NuxtLink to="/notes/edit" class="w-auto">
                     <button type="button"
                         class="w-auto group bg-blue/10 border border-blue flex !text-sm justify-center items-center gap-x-1.5 rounded-xl px-3 py-1.5 text-blue">
@@ -92,7 +100,7 @@ const route = useRoute();
                         </span>
                     </button>
                 </div>
-            </div>
+            </div> -->
         </Container>
     </div>
 </template>

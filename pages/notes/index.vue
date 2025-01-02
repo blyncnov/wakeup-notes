@@ -57,7 +57,7 @@ onMounted(() => {
                 <h3 class="text-xl md:text-2xl font-normal opacity-85">Nearby Notes</h3>
 
                 <!-- Loading State -->
-                <div v-if="!notes" class="mt-6">
+                <div v-if="!notes" class="w-full mt-6">
                     <p>Loading...</p>
                 </div>
 
@@ -67,7 +67,7 @@ onMounted(() => {
                 </div>
 
                 <!-- Empty State -->
-                <div v-else-if="notes.length === 0" class="w-full mt-6">
+                <div v-else-if="Array.isArray(notes) && notes.length === 0" class="w-full mt-6">
                     <p class="opacity-90"> No data Found</p>
                 </div>
 

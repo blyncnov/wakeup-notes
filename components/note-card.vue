@@ -1,8 +1,11 @@
 <script lang="ts">
-
-import type { NoteProps } from "~/types";
+import type { NoteProps } from "@/types";
 
 export default {
+    setup() {
+        const isOpen = ref(false);
+        return { isOpen };
+    },
     props: {
         note: {
             type: Object as PropType<NoteProps>,
@@ -14,16 +17,12 @@ export default {
 
 <template>
     <div
-        class="w-full h-full shadow-sm p-4 rounded-xl border-[1.2px] border-primary bg-primary/5 flex flex-col justify-between gap-4">
+        class="w-full relative h-full shadow-sm p-4 rounded-xl border-[1.2px] border-primary bg-primary/5 flex flex-col justify-between gap-4">
         <div class="flex flex-col gap-1.5">
             <h2 class="text-2xl !leading-[1.3]"> {{ note.note_title }}</h2>
             <p class="text-base text-secondary">
                 {{ note.note_description }}
             </p>
-
-            <div class="w-full capitalize">
-                Note Visibility: {{ note.note_visibility }}
-            </div>
         </div>
 
         <div class="w-auto flex">
@@ -42,7 +41,7 @@ export default {
                 </button>
             </NuxtLink>
 
-            <button v-else
+            <button v-else @click="isOpen = true"
                 class="w-auto group bg-secondary border border-secondary flex !text-sm justify-center items-center gap-x-2 rounded-xl px-3 py-1.5 text-gray-100">
                 <span>Open Note</span>
                 <span>
@@ -55,5 +54,8 @@ export default {
                 </span>
             </button>
         </div>
+
+        <!--Unlock Note Modal -->
+        <UnlockNoteModal :isOpen="isOpen" :note="note" />
     </div>
 </template>

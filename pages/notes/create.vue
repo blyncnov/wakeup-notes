@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+declare const google: any;
+
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -59,6 +61,30 @@ const handleSubmit = async (event: Event) => {
             isLoading.value = false;
         });
 };
+
+
+onMounted(() => {
+    const locationInput = document.getElementById("note_location") as HTMLInputElement;
+
+    if (locationInput) {
+        // Initialize the Autocomplete object with the input element
+        const autocomplete = new google.maps.places.Autocomplete(locationInput, {
+            types: ["geocode"], // Adjust as needed (e.g., 'address' or 'establishment')
+        });
+
+        autocomplete.addListener("place_changed", () => {
+            const place = autocomplete.getPlace();
+
+            // Update value of the google formatted adresss to form location input
+            form.value.note_location = place.formatted_address;
+
+            if (place.geometry) {
+                form.value.note_latitude = place.geometry.location.lat();
+                form.value.note_longitude = place.geometry.location.lng();
+            }
+        });
+    }
+});
 </script>
 
 <template>
@@ -150,18 +176,19 @@ const handleSubmit = async (event: Event) => {
                             <label for="note_latitude" class="mb-1 block text-sm font-medium">
                                 Latitude
                             </label>
-                            <input v-model.number="form.note_latitude" type="number" step="any" id="note_latitude"
+                            <input type="number" step="any" id="note_latitude" :value="form.note_latitude"
                                 name="note_latitude" placeholder="33.6" class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2
-                            focus:border-blue-500 focus:outline-none" />
+                            focus:border-blue-500 focus:outline-none" readonly />
                         </div>
 
                         <div>
                             <label for="note_longitude" class="mb-1 block text-sm font-medium">
                                 Longitude
                             </label>
-                            <input v-model.number="form.note_longitude" type="number" step="any" id="note_longitude"
+                            <input :value="form.note_longitude" type="number" step="any" id="note_longitude"
                                 name="note_longitude" placeholder="89.1"
-                                class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 focus:border-blue-500 focus:outline-none" />
+                                class="w-full bg-white border-gray-300 rounded-lg border-[1.2px] px-3 py-2 focus:border-blue-500 focus:outline-none"
+                                readonly />
                         </div>
                     </div>
 

@@ -1,3 +1,19 @@
+<script lang="ts" setup>
+useHead({
+  title: 'Spartial Notes',
+  meta: [
+    { name: 'description', content: 'Leave a note at your favorite spot, and it will be waiting for you when you return!' }
+  ],
+  script: [
+    {
+      src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBvMuJ5AghZPm9BHFP3zJYy-yf7YWve4co&libraries=places',
+      async: true,  // Load asynchronously
+      defer: true   // Defer execution until after the document is parsed
+    }
+  ]
+})
+</script>
+
 <template>
   <NuxtLayout>
     <NuxtPage />

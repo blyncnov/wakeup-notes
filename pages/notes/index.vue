@@ -4,6 +4,50 @@ const { data: notes, error } = await useFetch('/api/notes', {
     cache: 'no-store',
 });
 
+function reloadPage(lat: number, lng: number) {
+    location.reload();
+}
+
+interface Coordinates {
+    latitude: number;
+    longitude: number;
+}
+
+interface Position {
+    coords: Coordinates;
+}
+
+function updateURLWithLocation(lat: number, lng: number): void {
+    const url = new URL(window.location.href);
+
+    // Add lat and lng as query parameters
+    url.searchParams.set('lat', lat.toString());
+    url.searchParams.set('lng', lng.toString());
+
+    // Push the new URL to the browser without reloading the page
+    window.history.pushState({}, '', url);
+}
+
+function showPosition(position: { coords: { latitude: number; longitude: number; }; }) {
+    console.log(`Latitude: ${position.coords.latitude}`)
+    console.log(`Longitude: ${position.coords.longitude}`)
+
+    // Call function to update the URL with lat/lng
+    updateURLWithLocation(position.coords.latitude, position.coords.longitude);
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+onMounted(() => {
+    getLocation();
+});
+
 </script>
 
 <template>
@@ -37,4 +81,3 @@ const { data: notes, error } = await useFetch('/api/notes', {
         </Container>
     </div>
 </template>
-s

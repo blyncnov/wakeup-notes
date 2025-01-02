@@ -6,7 +6,7 @@ useHead({
   ],
   script: [
     {
-      src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBvMuJ5AghZPm9BHFP3zJYy-yf7YWve4co&libraries=places',
+      src: `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&libraries=places`,
       async: true,  // Load asynchronously
       defer: true   // Defer execution until after the document is parsed
     }

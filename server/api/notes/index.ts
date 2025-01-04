@@ -1,40 +1,44 @@
 import { Note } from "@prisma/client";
 import prisma from "~/lib/prisma";
 
-export default defineEventHandler(async (event) => {
-  // Only allow GET request
-  assertMethod(event, ["GET"]);
+export default defineEventHandler(
+  async (
+    event
+  ): Promise<{ statusCode: number; message: string; data?: Note[] }> => {
+    // Allow only GET and POST requests
+    assertMethod(event, ["GET", "POST"]);
 
-  // i have http://localhost:3000/notes?lat=7.2230117&lng=3.4546358 as the url of the page
-  // how can i extract the lat and lng from the query string in the browser
+    // Parse the request body
+    const body = await readBody(event);
+    const { lat, lng } = body;
 
-  // Extract query string
-  const query = getQuery(event);
-  console.log(event._method);
+    console.log(`Received coordinates: ${lat}, ${lng}`);
 
-  const latitude = 7.2230117;
-  const longitude = 3.4546358;
+    // Validate coordinates
+    if (typeof lat !== "number" || typeof lng !== "number") {
+      return { message: "Invalid coordinates", statusCode: 400 };
+    }
 
-  // Ensure lat and lng are valid
+    // Define search radius in kilometers
+    const radius = 5;
 
-  if (!latitude || !longitude) {
-    return { message: "Invalid coordinates" };
-  }
-
-  // Radius in kilometers
-  const radius = 10;
-
-  const notes = await prisma.$queryRaw<Note[]>`
+    // Fetch notes within the specified radius
+    const notes = await prisma.$queryRaw<Note[]>`
     SELECT * FROM (
       SELECT *,
-             (6371 * acos(cos(radians(${latitude})) * cos(radians(note_latitude))
-             * cos(radians(note_longitude) - radians(${longitude}))
-             + sin(radians(${latitude}))
+             (6371 * acos(cos(radians(${lat})) * cos(radians(note_latitude))
+             * cos(radians(note_longitude) - radians(${lng}))
+             + sin(radians(${lat}))
              * sin(radians(note_latitude)))) AS "distance"
       FROM "Note"
     ) AS subquery
     WHERE "distance" < ${radius};
   `;
 
-  return notes;
-});
+    return {
+      statusCode: 200,
+      message: "Successfully fetched notes",
+      data: notes,
+    };
+  }
+);
